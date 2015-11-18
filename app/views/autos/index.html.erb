@@ -1,0 +1,34 @@
+<div class="panel panel-success">
+
+<h1>LISTA DE AUTOS</h1>
+
+<table class=" table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>PATENTE</th>
+      <th>COLOR</th>
+      <th>USUARIO</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @autos.each do |auto| %>
+      <tr>
+        <td><%= auto.patente %></td>
+        <td><%= auto.color %></td>
+        <td><%= auto.usuario %></td>
+        <td><%= link_to 'MOSTRAR', auto %></td>
+        <% if current_usuario.email == auto.usuario.email  %>
+        <td><%= link_to 'MODIFICAR', edit_auto_path(auto) %></td>
+        <td><%= link_to 'ELIMINAR', auto, method: :delete, data: { confirm: 'SE ELIMINARA DEL SISTEMA' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'NUEVA PATENTE Y COLOR', new_auto_path %>
+</div>

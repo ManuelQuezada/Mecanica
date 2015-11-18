@@ -1,0 +1,19 @@
+<div class="panel panel-success">
+
+<h2>PATENTE/COLOR</h2>
+<p>
+<strong>PATENTE: <strong>
+<%= @auto.patente%>
+<strong>COLOR: <strong>
+<%= @auto.color %>
+<strong>USUARIO: <strong>
+<%= @auto.usuario.email %>
+
+<br>
+<% if current_usuario.email == @auto.usuario.email  %>
+<%= link_to 'Edit', edit_auto_path(@auto) %> |
+<% end %>
+<br>
+<%= link_to 'MODIFICAR', edit_auto_path(@auto) %> |
+<%= link_to 'ATRAS', autos_path %>
+</div>

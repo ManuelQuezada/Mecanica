@@ -1,0 +1,16 @@
+<div class="panel panel-success">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>MECANICO:</strong>
+  <%= @mecanico_especialidad.mecanico %>
+</p>
+
+<p>
+  <strong>ESPECIALIDAD:</strong>
+  <%= @mecanico_especialidad.especialidad %>
+</p>
+
+<%= link_to 'EDITAR', edit_mecanico_especialidad_path(@mecanico_especialidad) %> |
+<%= link_to 'ATRAS', mecanico_especialidads_path %>
+</div>

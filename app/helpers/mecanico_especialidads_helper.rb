@@ -1,0 +1,2 @@
+module MecanicoEspecialidadsHelper
+end

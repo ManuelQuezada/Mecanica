@@ -1,0 +1,18 @@
+<div class="panel panel-success">
+<h2>Especialidad y LUGAR DE TRATAMIENTO</h2>
+<p>
+<h3>NOMBRE : <%= @especialidad.espnombre %>
+<h3>LUGAR  : <%= @especialidad.esplugar %>
+<br>
+<h2>MECANICO</h2>
+<% @mecanicos.each do |mecanico| %>
+<strong>NOMBRE: <strong>
+<%= mecanico.nombre %>
+<strong>APELLIDO: <strong>
+<%= mecanico.apellido %>
+<br>
+<% end %>
+
+<%= link_to 'MODIFICAR', edit_especialidad_path(@especialidad) %> |
+<%= link_to 'ATRAS', especialidads_path %>
+</div>

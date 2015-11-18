@@ -1,0 +1,30 @@
+
+<div class="panel panel-success">
+<h1>LISTA DE ESPECIALIDADES</h1>
+
+<table class=" table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>NOMBRE</th>
+      <th>LUGAR</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @especialidads.each do |especialidad| %>
+      <tr>
+        <td><%= especialidad.espnombre %></td>
+        <td><%= especialidad.esplugar %></td>
+        <td><%= link_to 'MOSTRAR', especialidad %></td>
+        <td><%= link_to 'MODIFICAR', edit_especialidad_path(especialidad) %></td>
+        <td><%= link_to 'ELIMINAR', especialidad, method: :delete, data: { confirm: 'SE ELIMINARA DEL SISTEMA' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'NUEVA ESPECIALIDAD', new_especialidad_path %>
+</div>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="panel panel-success">
+<h1>LISTA DE MECANICOS Y SU ESPECIALIDAD</h1>
+
+<table class=" table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>MECANICO</th>
+      <th>ESPECIALIDAD</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mecanico_especialidads.each do |mecanico_especialidad| %>
+      <tr>
+        <td><%= mecanico_especialidad.mecanico %></td>
+        <td><%= mecanico_especialidad.especialidad %></td>
+        <td><%= link_to 'MOSTRAR', mecanico_especialidad %></td>
+        <td><%= link_to 'EDITAR', edit_mecanico_especialidad_path(mecanico_especialidad) %></td>
+        <td><%= link_to 'ELIMINAR', mecanico_especialidad, method: :delete, data: { confirm: 'SE ELIMINARA COMPLETAMENTE' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'NUEVO MECANICO Y SU ESPECIALIDAD', new_mecanico_especialidad_path %>
+</div>

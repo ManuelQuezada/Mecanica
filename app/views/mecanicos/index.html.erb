@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-primary">
+<h1>Lista de Mecanicos</h1>
+</div>
+<div class="panel panel-success">
+<table class=" table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @mecanicos.each do |mecanico| %>
+      <tr>
+        <td><%= mecanico.nombre %></td>
+        <td><%= mecanico.apellido %></td>
+        <td><%= link_to 'Show', mecanico %></td>
+        <td><%= link_to 'Edit', edit_mecanico_path(mecanico) %></td>
+        <td><%= link_to 'Destroy', mecanico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Ingrese nuevo Mecanico', new_mecanico_path %>
+</div>
