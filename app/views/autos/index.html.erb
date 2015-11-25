@@ -17,7 +17,7 @@
       <tr>
         <td><%= auto.patente %></td>
         <td><%= auto.color %></td>
-        <td><%= auto.usuario %></td>
+        <td><%= auto.usuario.email %></td>
         <td><%= link_to 'MOSTRAR', auto %></td>
         <% if current_usuario.email == auto.usuario.email  %>
         <td><%= link_to 'MODIFICAR', edit_auto_path(auto) %></td>
